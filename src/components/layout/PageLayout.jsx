@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import ParticlesBackground from "../Background/ParticlesBackground";
 import SparkRainParticles from "../SparkRainParticles";
+import Navbar from "../Navbar/Navbar";
 
 const PageLayout = ({ children }) => {
   useEffect(() => {
@@ -23,10 +24,9 @@ const PageLayout = ({ children }) => {
 
   return (
     <>
-      {/* 🌌 Global atmosphere */}
+      <Navbar />
       <SparkRainParticles />
 
-      {/* 📜 Scrollable content */}
       <main className="scroll-container">
         {children}
       </main>
