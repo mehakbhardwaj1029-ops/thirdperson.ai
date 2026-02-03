@@ -1,0 +1,25 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/* 🔒 GLOBAL RESET — ONLY ONCE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔒 GLOBAL DOCUMENT */
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  background: black;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+/* 🔒 LENIS SCROLL CONTAINER */
+.scroll-container {
+  position: relative;
+  z-index: 1;
+}

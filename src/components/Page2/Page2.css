@@ -1,0 +1,47 @@
+.page2-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ⬅ left aligned */
+  padding: 0 10%;
+}
+
+.page2-card {
+  max-width: 520px;
+  padding: 36px 40px;
+
+  /* 🪟 Glassmorphism */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* ✨ Shiny border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+
+  /* Soft glow */
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.06),
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* 🧠 Heading */
+.page2-card h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+/* 📄 Paragraph */
+.page2-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d6d6d6;
+}
+
+/* 💙 Highlighted span */
+.page2-card p span {
+  color: #8ab4f8;
+  font-weight: 500;
+}

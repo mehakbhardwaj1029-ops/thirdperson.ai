@@ -1,0 +1,102 @@
+.when-wrapper {
+  padding: 120px 10%;
+  color: white;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 80px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 🔮 Glass Card Base */
+.glass-card {
+  position: relative;
+  padding: 26px 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  cursor: pointer;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 🧠 Card header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.glass-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ➕ Chevron */
+.chevron {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: transform 0.3s ease;
+}
+
+.glass-card.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* 🔽 Dropdown */
+.dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+
+.glass-card.open .dropdown {
+  max-height: 300px;
+}
+
+.dropdown ul {
+  margin-top: 22px;
+  padding-left: 20px;
+}
+
+.dropdown li {
+  list-style: disc;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* 🍒 Bullet color (dark cherry) */
+.dropdown li::marker {
+  color: #7a1f2b;
+}
+
+/* ✨ Hover color themes */
+.glass-card.rose:hover {
+  background: rgba(244, 108, 122, 0.18);
+}
+
+.glass-card.amber:hover {
+  background: rgba(240, 140, 90, 0.18);
+}
+
+.glass-card.teal:hover {
+  background: rgba(76, 195, 161, 0.18);
+}
+
+/* subtle open glow */
+.glass-card.open {
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+}

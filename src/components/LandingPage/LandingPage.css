@@ -1,0 +1,39 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 10%;
+  color: #eaeaea;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  max-width: 800px;
+}
+
+.hero h1 span {
+  color: #8ab4f8;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  color: #b5b5b5;
+}
+  .cta {
+      margin-top: 40px;
+    }
+
+    .cta button {
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      background: #8ab4f8;
+      color: #0f0f0f;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
