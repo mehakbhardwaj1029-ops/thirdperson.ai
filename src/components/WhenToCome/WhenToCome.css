@@ -5,9 +5,12 @@
 
 .main-heading {
   text-align: center;
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-family: 'Great Vibes', serif;
+  letter-spacing: 2px;
+  font-size: 4rem;
+  font-weight: 500;
   margin-bottom: 80px;
+
 }
 
 .cards {
@@ -34,6 +37,8 @@
 /* 🧠 Card header */
 .card-header {
   display: flex;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 50;
   align-items: center;
   justify-content: space-between;
 }

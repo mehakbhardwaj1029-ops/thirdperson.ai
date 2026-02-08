@@ -5,9 +5,10 @@
   width: 100%;
   height: 64px;
 
-  background: #030303; 
-  z-index: 200; 
+  background: #030303; /* solid background */
+  z-index: 200; /* above everything */
 
+  /* subtle premium bottom border */
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -37,6 +38,7 @@
   justify-content: space-between;
 }
 
+/* Brand */
 .brand {
   font-size: 1.4rem;
   font-weight: 700;
@@ -44,12 +46,14 @@
   letter-spacing: 0.5px;
 }
 
+/* Right side actions */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* Sign in */
 .btn-signin {
   padding: 8px 18px;
   border-radius: 6px;
@@ -67,6 +71,7 @@
   color: #0b0b0b;
 }
 
+/* Sign up */
 .btn-signup {
   padding: 8px 18px;
   border-radius: 6px;

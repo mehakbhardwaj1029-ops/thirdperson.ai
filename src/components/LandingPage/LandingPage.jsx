@@ -1,16 +1,37 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import './LandingPage.css';
 const LandingPage = () => {
   return (
    <section className='hero'>
-    <h1>Overthinking alone <span>hurts</span></h1>
-    <p className='subtitle'>
-      Talk to Ryan who listens without judgment,
-      understands your situations, and helps you get clarity
-      about others and about yourself.
-    </p>
+    <motion.h1
+    initial={{
+          y: -25,
+          opacity: 0,
+          filter: 'blur(6px)'
+        }}
+         animate={{
+          y: 0,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }}
+         transition={{
+          duration: 3,
+          ease: 'easeOut'
+        }}
+    >Third Person
+    </motion.h1>
+   <motion.p
+  className="subtitle"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1.2, duration: 1 }}
+>
+  Your AI companion
+</motion.p>
+
     <div className='cta'>
-        <button>Start Your Journey of Knowing You</button>
+        
     </div>
    </section>
   )

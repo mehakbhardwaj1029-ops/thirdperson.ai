@@ -36,7 +36,7 @@ const WhenToCome = () => {
 
   return (
     <section className="when-wrapper">
-      <h2 className="main-heading">When Should You Come to Ryan</h2>
+      <h2 className="main-heading">When Should You Come to Us</h2>
 
       <div className="cards">
         {sections.map((section, index) => (

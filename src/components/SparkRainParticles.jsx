@@ -17,7 +17,7 @@ const SparkRainParticles = () => {
         particles: {
           // 🔑 REQUIRED
           number: {
-            value: 140, // total particles (sharp + blurred)
+            value: 100, // total particles (sharp + blurred)
           },
 
           shape: {
@@ -32,17 +32,17 @@ const SparkRainParticles = () => {
           // 🔹 GROUPS
           groups: {
             sharp: {
-              number: { value: 140 },
+              number: { value: 80 },
               opacity: { value: { min: 0.9, max: 1 } },
               size: { value: { min: 1.2, max: 1.8 } },
               shadow: { enable: false },  
-              move: { speed: { min: 0.4, max: 1.3 } },
+              move: { speed: { min: 0.4, max: 1 } },
             },
 
             blurred: {
-              number: { value: 30 },
+              number: { value: 20 },
               opacity: { value: { min: 0.15, max: 0.4 } },
-              size: { value: { min: 2.5, max: 4.5 } },
+              size: { value: { min: 2.5, max: 3 } },
               shadow: {
                 enable: false,
                 color: "#ffffff",
