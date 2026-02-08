@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './MBTI.css';
+import { useNavigate } from "react-router-dom";
 
 const questions = [
  {
@@ -156,6 +157,7 @@ const MBTI = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [finished, setFinished] = useState(false);
+  const navigate = useNavigate();
 
   const currentQuestion = questions[currentIndex];
 
@@ -187,16 +189,17 @@ const MBTI = () => {
         title: "You might be feeling emotionally overwhelmed",
         message:
           "This could be a good time for reassurance and a calm, pressure-free moment together.",
-        action: "Start a gentle virtual date"
+        action: "Detailed Analysis"
       };
     }
 
     if (selectedTags.includes("numbing")) {
+      
       return {
         title: "You tend to process emotions internally",
         message:
           "Sharing even a small thought might help your partner understand you better.",
-        action: "Send a thoughtful card"
+        action: "Detailed Analysis"
       };
     }
 
@@ -205,7 +208,7 @@ const MBTI = () => {
         title: "Quality time seems important to you",
         message:
           "A simple, intentional date could make a big difference right now.",
-        action: "Plan a short date"
+        action: "Detailed Analysis"
       };
     }
 
@@ -213,7 +216,7 @@ const MBTI = () => {
       title: "You value emotional connection",
       message:
         "Staying consistent with small moments can help strengthen your bond.",
-      action: "Explore connection ideas"
+      action: "Detailed Analysis"
     };
   };
 
@@ -221,15 +224,19 @@ const MBTI = () => {
     const insight = getInsight();
 
     return (
+      <div className="mbti-page">
       <div className="mbti-questionnaire-container">
         <h2>{insight.title}</h2>
         <p>{insight.message}</p>
-        <button className="primary-btn">{insight.action}</button>
+        <button className="mbti-primary-btn" onClick={()=>navigate("/detailed-analysis")}>{insight.action}</button>
+      </div>
       </div>
     );
   }
 
   return (
+    
+    <div className="mbti-page">
     <div className="mbti-questionnaire-container">
       <div className="relationship-confusion-progress">
         {currentIndex + 1} / {questions.length}
@@ -262,6 +269,7 @@ const MBTI = () => {
           ? "See insights"
           : "Next"}
       </button>
+    </div>
     </div>
   );
 }

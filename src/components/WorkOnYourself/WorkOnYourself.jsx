@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './WorkOnYourself.css';
+import { useNavigate } from "react-router-dom";
 
 const questions = [
  {
@@ -128,6 +129,7 @@ const WorkOnYourself = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [finished, setFinished] = useState(false);
+  const navigate = useNavigate();
 
   const currentQuestion = questions[currentIndex];
 
@@ -159,7 +161,7 @@ const WorkOnYourself = () => {
         title: "You might be feeling emotionally overwhelmed",
         message:
           "This could be a good time for reassurance and a calm, pressure-free moment together.",
-        action: "Start a gentle virtual date"
+        action: "Detailed Analysis"
       };
     }
 
@@ -168,7 +170,7 @@ const WorkOnYourself = () => {
         title: "You tend to process emotions internally",
         message:
           "Sharing even a small thought might help your partner understand you better.",
-        action: "Send a thoughtful card"
+        action: "Detailed Analysis"
       };
     }
 
@@ -177,7 +179,7 @@ const WorkOnYourself = () => {
         title: "Quality time seems important to you",
         message:
           "A simple, intentional date could make a big difference right now.",
-        action: "Plan a short date"
+        action: "Detailed Analysis"
       };
     }
 
@@ -185,7 +187,7 @@ const WorkOnYourself = () => {
       title: "You value emotional connection",
       message:
         "Staying consistent with small moments can help strengthen your bond.",
-      action: "Explore connection ideas"
+      action: "Detailed Analysis"
     };
   };
 
@@ -196,12 +198,13 @@ const WorkOnYourself = () => {
       <div className="questionnaire-container">
         <h2>{insight.title}</h2>
         <p>{insight.message}</p>
-        <button className="primary-btn">{insight.action}</button>
+        <button className="primary-btn" onClick={()=>navigate("/detailed-analysis")}>{insight.action}</button>
       </div>
     );
   }
 
   return (
+    <div className="work-on-yourself">
     <div className="questionnaire-container">
       <div className="progress">
         {currentIndex + 1} / {questions.length}
@@ -234,6 +237,7 @@ const WorkOnYourself = () => {
           ? "See insights"
           : "Next"}
       </button>
+    </div>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import './RedFlags.css';
+import { useNavigate } from "react-router-dom";
+import { nav } from "framer-motion/client";
 
 const questions = [
  {
@@ -148,6 +150,7 @@ const RedFlags = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [finished, setFinished] = useState(false);
+  const navigate = useNavigate();
 
   const currentQuestion = questions[currentIndex];
 
@@ -179,7 +182,7 @@ const RedFlags = () => {
         title: "You might be feeling emotionally overwhelmed",
         message:
           "This could be a good time for reassurance and a calm, pressure-free moment together.",
-        action: "Start a gentle virtual date"
+        action: "Detailed Analysis"
       };
     }
 
@@ -188,7 +191,7 @@ const RedFlags = () => {
         title: "You tend to process emotions internally",
         message:
           "Sharing even a small thought might help your partner understand you better.",
-        action: "Send a thoughtful card"
+        action: "Detailed Analysis"
       };
     }
 
@@ -197,7 +200,7 @@ const RedFlags = () => {
         title: "Quality time seems important to you",
         message:
           "A simple, intentional date could make a big difference right now.",
-        action: "Plan a short date"
+        action: "Detailed Analysis"
       };
     }
 
@@ -205,7 +208,7 @@ const RedFlags = () => {
       title: "You value emotional connection",
       message:
         "Staying consistent with small moments can help strengthen your bond.",
-      action: "Explore connection ideas"
+      action: "Detailed Analysis"
     };
   };
 
@@ -213,15 +216,20 @@ const RedFlags = () => {
     const insight = getInsight();
 
     return (
+      <div className="red-flags">
       <div className="redflags-questionnaire-container">
         <h2>{insight.title}</h2>
         <p>{insight.message}</p>
-        <button className="primary-btn">{insight.action}</button>
+        <button className="primary-btn" onClick={()=>navigate("/detailed-analysis")}>{insight.action}</button>
+       
+      </div>
+        
       </div>
     );
   }
 
   return (
+    <div className="red-flags">
     <div className="redflags-questionnaire-container">
       <div className="relationship-confusion-progress">
         {currentIndex + 1} / {questions.length}
@@ -254,6 +262,9 @@ const RedFlags = () => {
           ? "See insights"
           : "Next"}
       </button>
+
+     
+    </div>
     </div>
   );
 }
