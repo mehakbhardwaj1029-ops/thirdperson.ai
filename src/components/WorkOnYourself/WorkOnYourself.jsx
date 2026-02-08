@@ -195,11 +195,14 @@ const WorkOnYourself = () => {
     const insight = getInsight();
 
     return (
+    <div className="work-on-yourself">
       <div className="questionnaire-container">
         <h2>{insight.title}</h2>
         <p>{insight.message}</p>
         <button className="primary-btn" onClick={()=>navigate("/detailed-analysis")}>{insight.action}</button>
       </div>
+      </div>
+
     );
   }
 
